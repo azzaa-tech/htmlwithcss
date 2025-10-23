@@ -1,0 +1,192 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 200vh;
+    background: linear-gradient(135deg, #80A1BA, #91C4C3, #B4DEBD, #FFF7DD);
+}
+
+/* Bagian logo */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px;
+    background-color: #FFF7DD;
+    color: white;
+
+}
+
+.left-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.snoopino {
+    font-size: 24px;
+    font-weight: bold;
+    color: #070129;
+}
+
+
+.location-box {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f2f2f2;
+    border-radius: 50px;
+    padding: 6px 14px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.location-box:hover {
+    background: #e0e0e0;
+}
+
+.location-box select {
+    background: none;
+    border: none;
+    font-weight: bold;
+    color: #333;
+    outline: none;
+    appearance: none;
+    cursor: pointer;
+}
+
+.location-box select option {
+    color: #000;
+    background: #fff;
+}
+
+/* navbar */
+
+nav a {
+    color: rgb(0, 4, 28);
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+
+.notnot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.notnot-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px #00000033;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.notnot-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px #0000004d;
+}
+
+.notnot-poster img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.6s ease;
+}
+
+.notnot-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(10px);
+    padding: 25px 15px;
+    text-align: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 0 0 16px 16px;
+}
+
+.notnot-card:hover .notnot-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.notnot-overlay button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.notnot-overlay button:hover {
+    background-color: #003b51;
+}
+
+.notnot-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #222;
+}
+
+
+/* feelthememo */
+.tulisan {
+    text-align: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #398d9d;
+    padding-top: 40px;
+
+}
+
+.nulis {
+    text-align: center;
+    font-size: 30px;
+    color: #398d9d;
+    padding-bottom: 10px;
+}
+
+
+.hero {
+    text-align: center;
+    justify-items: center;
+}
+
+/* searching */
+
+.searching {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: right;
+    font-size: large;
+    gap: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  
+    width: 300px;
+}
+
+.text a {
+    text-decoration: none;
+    color: #ffffff;
+}

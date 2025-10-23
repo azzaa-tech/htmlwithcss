@@ -1,0 +1,79 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #80A1BA, #91C4C3, #B4DEBD, #FFF7DD);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-size: 400% 400%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  background-color: #FFF7DD; 
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  text-align: center;
+  width: 300px;
+  border: 3px dashed #80A1BA; 
+}
+
+ h2 {
+            color: #333;
+            margin-bottom: 35px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .tombol {
+            display: block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #79A3B1;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .tombol:hover {
+            background-color: #4c6f7a;
+        }
+
+        .text {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .text a {
+            text-decoration: none;
+            color: #79A3B1;
+        }
+
+        .text a:hover {
+            text-decoration: underline;
+        }
