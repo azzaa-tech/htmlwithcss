@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detail Film - Toy Story 4</title>
+  <style>
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins';
+      background: linear-gradient(135deg, #80A1BA, #91C4C3, #B4DEBD, #FFF7DD);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #000; /* ubah jadi hitam */
+      padding: 145px 15%;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 40px;
+    }
+
+    section {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    figure img {
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    article h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #000; /* hitam */
+    }
+
+    .genre {
+      color: #333; /* abu tua biar tetap beda */
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #444; /* abu tua */
+      margin-bottom: 15px;
+    }
+
+    .button {
+      background: #00b4ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #0091cc;
+    }
+
+    .detail {
+      margin-top: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* ubah warna garis */
+      display: flex;
+      gap: 30px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .detail a {
+      color: #000; /* hitam */
+      text-decoration: none;
+      padding-bottom: 6px;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .detail a:hover, .detail a.active {
+      border-bottom: 3px solid #00b4ff;
+      color: #00b4ff;
+    }
+
+    section.detail {
+      display: block;
+      margin-top: 25px;
+    }
+
+    .judul-sub {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: #000; /* hitam */
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+      color: #111; /* hitam */
+    }
+
+  </style>
+</head>
+<body>
+
+  <main>
+    <div id="nav"></div>
+    <h2 style="margin-bottom: 25px; color:#000;">Detail Film</h2>
+    <section>
+      <figure>
+        <img src="../Assets/download (3).jpg" alt="Toy Story 4 Poster">
+      </figure>
+
+      <article>
+        <p class="info">Tayang: Juni 2019 | Durasi: 1h 40m | Format: 2D</p>
+        <h2>INSIDE OUT 2</h2>
+        <p class="genre">Animation / Adventure / Comedy</p>
+        <button class="button">▶ Lihat Trailer</button>
+      </article>
+    </section>
+
+    <div class="detail">
+      <a href="./Jadwal.html">Jadwal</a>
+      <a href="#" class="active">Detail</a>
+    </div>
+
+    <section class="detail">
+      <p class="judul-sub">Sinopsis</p>
+      <p>
+        Woody, Buzz Lightyear, dan kawan-kawan memulai petualangan baru bersama Forky — mainan buatan dari sendok garpu plastik.
+        Ketika Forky merasa dirinya bukan mainan dan melarikan diri, Woody berusaha membawanya kembali. Dalam perjalanan,
+        mereka bertemu dengan teman lama dan menemukan arti baru dari menjadi mainan.
+      </p>
+
+      <p><strong>Produser:</strong> Jonas Rivera</p>
+      <p><strong>Sutradara:</strong> Josh Cooley</p>
+      <p><strong>Penulis:</strong> Andrew Stanton, Stephany Folsom</p>
+      <p><strong>Production:</strong> Pixar Animation Studios</p>
+    </section>
+  </main>
+
+  <script>
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+        const navContainer = document.getElementById("nav");
+        navContainer.innerHTML = data;
+
+        const navbar = navContainer.querySelector("header");
+        if (navbar) {
+          navbar.style.position = "fixed";
+          navbar.style.top = "0";
+          navbar.style.left = "0";
+          navbar.style.right = "0";
+        }
+      });
+  </script>
+</html>

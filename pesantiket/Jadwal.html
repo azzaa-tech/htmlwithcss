@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Jadwal - Toy Story 4</title>
+  <style>
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #80A1BA, #91C4C3, #B4DEBD, #FFF7DD);
+      background-size: 400% 400%;
+      animation: gradientMove 12s ease infinite;
+      color: #000; /* ubah ke hitam */
+      padding: 145px 15%;
+      overflow-x: hidden;
+    }
+
+    main {
+      margin-top: 40px;
+    }
+
+    section {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+    }
+
+    figure img {
+      width: 180px;
+      border-radius: 10px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+    }
+
+    article h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      color: #000; /* hitam */
+    }
+
+    .genre {
+      color: #444; /* abu tua */
+      font-size: 15px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      font-size: 14px;
+      color: #333; /* abu tua */
+      margin-bottom: 15px;
+    }
+
+    .button {
+      background: #00b4ff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #0091cc;
+    }
+
+    /* Navigasi Jadwal / Detail */
+    .detail {
+      margin-top: 40px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); /* ubah garis jadi gelap */
+      display: flex;
+      gap: 30px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .detail a {
+      color: #000; /* hitam */
+      text-decoration: none;
+      padding-bottom: 6px;
+      transition: color 0.3s, border-bottom 0.3s;
+    }
+
+    .detail a:hover, .detail a.active {
+      border-bottom: 3px solid #00b4ff;
+      color: #00b4ff;
+    }
+
+    /* Jadwal Hari */
+    .jadwal-hari {
+      display: flex;
+      gap: 15px;
+      margin-top: 30px;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .hari {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.05); /* latar jadi abu muda */
+      padding: 12px 20px;
+      border-radius: 10px;
+      width: 70px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hari:hover {
+      background: rgba(0, 0, 0, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .hari span {
+      display: block;
+      font-size: 13px;
+      color: #555; /* abu tua */
+    }
+
+    .hari strong {
+      display: block;
+      font-size: 18px;
+      color: #000; /* hitam */
+    }
+
+    .hari.active {
+      background: #00b4ff;
+      color: white;
+    }
+
+    .hari.active span {
+      color: white;
+    }
+
+    .hari.active strong {
+      color: white;
+    }
+
+    .cinema-box {
+      width: 90%;
+      background-color: #f6fefe;
+      border-radius: 12px;
+      padding: 26px 20px;
+      margin-top: 30px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #000; /* hitam */
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+      transition: 0.2s ease;
+    }
+
+    .cinema-box:hover {
+      background-color: #f2fcfc;
+      transform: scale(1.01);
+      cursor: pointer;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-family: 'Poppins';
+    }
+
+  </style>
+</head>
+<body>
+
+  <main>
+    <div id="nav"></div>
+
+    <h2 style="margin-bottom: 25px; color:#000;">Detail Film</h2>
+
+    <section>
+      <figure>
+        <img src="../Assets/download (3).jpg" alt="Toy Story 4 Poster">
+      </figure>
+
+      <article>
+        <p class="info">Tayang: Juni 2019 | Durasi: 1h 40m | Format: 2D</p>
+        <h2>TOY STORY 4</h2>
+        <p class="genre">Animation / Adventure / Comedy</p>
+        <button class="button">▶ Lihat Trailer</button>
+      </article>
+    </section>
+
+    <div class="detail">
+      <a href="#" class="active">Jadwal</a>
+      <a href="detail.html">Detail</a>
+    </div>
+
+    <section class="jadwal-hari">
+      <div class="hari active">
+        <span>Min</span>
+        <strong>02</strong>
+      </div>
+      <div class="hari">
+        <span>Sen</span>
+        <strong>03</strong>
+      </div>
+      <div class="hari">
+        <span>Sel</span>
+        <strong>04</strong>
+      </div>
+      <div class="hari">
+        <span>Rab</span>
+        <strong>05</strong>
+      </div>
+      <div class="hari">
+        <span>Kam</span>
+        <strong>06</strong>
+      </div>
+      <div class="hari">
+        <span>Jum</span>
+        <strong>07</strong>
+      </div>
+      <div class="hari">
+        <span>Sab</span>
+        <strong>08</strong>
+      </div>
+    </section>
+
+    <div>
+      <p class="cinema-box"><a href="../Pilihankursi/kusi.html">NIPAH XXI</a></p>
+      <p class="cinema-box">PANAKKUKANG XXI</p>
+      <p class="cinema-box">PANAKKUKANG 21</p>
+      <p class="cinema-box">PANAKKUKANG SQUARE CGV</p>
+    </div>
+  </main>
+
+  <script>
+    fetch("nav.html")
+      .then(res => res.text())
+      .then(data => {
+        const navContainer = document.getElementById("nav");
+        navContainer.innerHTML = data;
+        const navbar = navContainer.querySelector("header");
+        if (navbar) {
+          navbar.style.position = "fixed";
+          navbar.style.top = "0";
+          navbar.style.left = "0";
+          navbar.style.right = "0";
+        }
+      });
+  </script>
+
+</body>
+</html>
