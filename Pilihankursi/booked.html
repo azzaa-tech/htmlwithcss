@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,16 +19,24 @@
     }
 
     @keyframes gradientMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .form-container {
       background-color: #fff;
       padding: 30px 40px;
       border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       width: 350px;
     }
 
@@ -43,7 +52,8 @@
       margin-top: 10px;
     }
 
-    input, select {
+    input,
+    select {
       width: 100%;
       padding: 8px;
       border: 1px solid #ccc;
@@ -53,9 +63,10 @@
       transition: 0.3s ease;
     }
 
-    input:focus, select:focus {
+    input:focus,
+    select:focus {
       border-color: #79A3B1;
-      box-shadow: 0 0 4px rgba(121,163,177,0.5);
+      box-shadow: 0 0 4px rgba(121, 163, 177, 0.5);
     }
 
     .error {
@@ -90,6 +101,7 @@
     }
   </style>
 </head>
+
 <body>
   <div class="form-container">
     <h2>🎟️ Pemesanan Tiket</h2>
@@ -125,63 +137,36 @@
 
   <script>
     const form = document.getElementById("pemesanan_tiket");
-    const nama = document.getElementById("nama");
-    const email = document.getElementById("email");
-    const film = document.getElementById("film");
-    const jumlah = document.getElementById("jumlah");
-    const total = document.getElementById("total");
-
     const hargaTiket = 50000;
 
-    jumlah.addEventListener("input", () => {
-      const jml = Number(jumlah.value);
-      if (jml >= 1 && jml <= 10) {
-        total.textContent = jml * hargaTiket;
-      } else {
-        total.textContent = 0;
-      }
-    });
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+      const nama = document.getElementById("nama").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const film = document.getElementById("film").value;
+      const jumlah = Number(document.getElementById("jumlah").value);
+      const total = document.getElementById("total");
 
-      let valid = true;
+      // Hitung total harga
+      total.textContent = (jumlah >= 1 && jumlah <= 10) ? jumlah * hargaTiket : 0;
 
-      // Reset error
-      document.querySelectorAll(".error").forEach(e => e.textContent = "");
-
-      // Validasi nama
-      if (nama.value.trim() === "") {
-        document.getElementById("error-nama").textContent = "Nama tidak boleh kosong!";
-        valid = false;
+      // Cek semua input
+      if (!nama || !email.includes("@") || !film || jumlah < 1 || jumlah > 10) {
+        alert("Isi semua data dengan benar!");
+        return;
       }
 
-      // Validasi email
-      const regexEmail = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-      if (!regexEmail.test(email.value)) {
-        document.getElementById("error-email").textContent = "Format email tidak valid!";
-        valid = false;
-      }
+      alert(`Pesanan berhasil!
+Nama: ${nama}
+Film: ${film}
+Jumlah: ${jumlah}
+Total: Rp ${jumlah * hargaTiket}`);
 
-      // Validasi film
-      if (film.value === "") {
-        document.getElementById("error-film").textContent = "Pilih salah satu film!";
-        valid = false;
-      }
-
-      // Validasi jumlah tiket
-      const jumlahTiket = Number(jumlah.value);
-      if (jumlahTiket < 1 || jumlahTiket > 10 || isNaN(jumlahTiket)) {
-        document.getElementById("error-jumlah").textContent = "Jumlah tiket harus 1–10!";
-        valid = false;
-      }
-
-      if (valid) {
-        alert(`Pesanan berhasil!\nNama: ${nama.value}\nFilm: ${film.value}\nJumlah: ${jumlah.value}\nTotal: Rp ${jumlah.value * hargaTiket}`);
-        form.reset();
-        total.textContent = 0;
-      }
+      form.reset();
+      total.textContent = 0;
     });
   </script>
 </body>
+
 </html>
